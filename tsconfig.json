@@ -3,7 +3,13 @@
       "target": "es5",
       "lib": ["es5", "dom"],
       "types": ["cypress", "node", "cypress-real-events"], //added
-      "resolveJsonModule": true //added
+      "resolveJsonModule": true, //added
+      "baseUrl": "./",
+      "paths": {
+        "@fixtures/*": [
+        "cypress/fixtures/*"
+        ]
+      }
     },
     "include": ["**/*.ts"]
   }
