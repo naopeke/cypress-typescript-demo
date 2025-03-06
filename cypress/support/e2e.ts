@@ -16,3 +16,4 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 import 'cypress-real-events/support'; //npm i cypress-real-events
+import './commands/getByPlaceholder'; //added

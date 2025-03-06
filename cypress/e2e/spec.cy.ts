@@ -24,3 +24,10 @@ it('testing with typescript', ()=>{
             .should('eq', list.order); //取得したorderが、lists配列に定義された順番（list.order）と一致することを確認
     })
 })
+
+it.only('create a new board', ()=>{
+    cy.visit('/');
+    // cy.get('[placeholder="Name of your first board"]')
+    cy.getByPlaceholder('Name of your first board');
+    
+})
