@@ -1,4 +1,5 @@
 export {}
+import Board from "../typings/board"
 declare global {
     namespace Cypress {
         interface Chainable {
@@ -8,7 +9,20 @@ declare global {
              * @example
              * cy.addBoard('new board')
              */
-            addBoard(name: string): Chainable<any>
+            addBoard(name: string): Chainable<Board>
         }
     }
 }
+
+Cypress.Commands.add('addBoard', (name: string)=>{
+    Cypress.log({
+        displayName: 'add board',
+        message: name,
+        consoleProps(){
+            return {
+                name
+            }
+        }
+    })
+    return cy.request('POST', '/api/boards', { name }).its('body')
+})
