@@ -25,9 +25,12 @@ it('testing with typescript', ()=>{
     })
 })
 
-it.only('create a new board', ()=>{
+it('create a new board', ()=>{
     cy.visit('/');
     // cy.get('[placeholder="Name of your first board"]')
     cy.getByPlaceholder('Name of your first board');
-    
+})
+
+it.only('create a new board', ()=>{
+    cy.addBoard('new board');
 })
