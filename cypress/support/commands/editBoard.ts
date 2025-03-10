@@ -17,7 +17,8 @@ declare global {
             //     name?: Board['name'],
             //     starred?: Board['starred']
             // }): Chainable<Board>
-            editBoard(body: Partial<Board> & Required<Pick<Board, 'id'>>): Chainable<Board>
+            // editBoard(body: Partial<Board> & Required<Pick<Board, 'id'>>): Chainable<Board>
+            editBoard: typeof editBoard;
         }
     }
 }
